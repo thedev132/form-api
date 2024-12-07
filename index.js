@@ -2,11 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const formRoutes = require('./routes/form');
+const formRoutes = require('./routes/forum');
 const replyRoutes = require('./routes/reply');
-const swaggerUi = require("swagger-ui-express");
-const swaggerConfig = require("./swaggerConfig");
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+const docRoutes = require('./routes/docs');
 
 const app = express();
 
@@ -14,10 +12,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api/forms', formRoutes);
-app.use('/api/forms', replyRoutes);
-app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerConfig, { customCssUrl: CSS_URL })
-);
+app.use('/api/forums', formRoutes);
+app.use('/api/forums', replyRoutes);
+app.get('/',  docRoutes);
 
 const PORT = 3030;
 app.listen(PORT, () => {
