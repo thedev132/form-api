@@ -1,0 +1,33 @@
+{
+  "name": "forum",
+  "version": "1.0.0",
+  "description": "An example forum API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "prisma generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedev132/form-api.git"
+  },
+  "author": "thedev132",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thedev132/form-api/issues"
+  },
+  "homepage": "https://github.com/thedev132/form-api#readme",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "prisma": "^6.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
